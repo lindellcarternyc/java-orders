@@ -1,6 +1,8 @@
 package com.lambda.school.javaorders.models;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "customers")
@@ -30,10 +32,19 @@ public class Customer {
 
     private String workingarea;
 
+    @ManyToOne()
+    @JoinColumn(name = "agentcode", nullable = false)
+    private Agent agent;
+
+    @OneToMany(mappedBy = "customer",
+        cascade = CascadeType.ALL,
+    orphanRemoval = true)
+    private List<Order> orders = new ArrayList<>();
+
     public Customer() {
     }
 
-    public Customer(String custcity, String custcountry, String custname, String grade, double openingamt, double outstandingamt, double paymentamt, String phone, double receiveamt, String workingarea) {
+    public Customer(String custcity, String custcountry, String custname, String grade, double openingamt, double outstandingamt, double paymentamt, String phone, double receiveamt, String workingarea, Agent agent) {
         this.custcity = custcity;
         this.custcountry = custcountry;
         this.custname = custname;
@@ -44,6 +55,7 @@ public class Customer {
         this.phone = phone;
         this.receiveamt = receiveamt;
         this.workingarea = workingarea;
+        this.agent = agent;
     }
 
     public long getCustcode() {
@@ -132,5 +144,21 @@ public class Customer {
 
     public void setWorkingarea(String workingarea) {
         this.workingarea = workingarea;
+    }
+
+    public Agent getAgent() {
+        return agent;
+    }
+
+    public void setAgent(Agent agent) {
+        this.agent = agent;
+    }
+
+    public List<Order> getOrders() {
+        return orders;
+    }
+
+    public void setOrders(List<Order> orders) {
+        this.orders = orders;
     }
 }

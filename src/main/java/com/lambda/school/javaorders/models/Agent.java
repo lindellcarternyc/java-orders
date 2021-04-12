@@ -1,6 +1,8 @@
 package com.lambda.school.javaorders.models;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "agents")
@@ -19,6 +21,9 @@ public class Agent {
     private String phone;
 
     private String workingarea;
+
+    @OneToMany(mappedBy = "agent", cascade = CascadeType.ALL, orphanRemoval = true)
+    private Set<Customer> customers = new HashSet<>();
 
     public Agent() {
     }
@@ -77,5 +82,13 @@ public class Agent {
 
     public void setWorkingarea(String workingarea) {
         this.workingarea = workingarea;
+    }
+
+    public Set<Customer> getCustomers() {
+        return customers;
+    }
+
+    public void setCustomers(Set<Customer> customerSet) {
+        this.customers = customerSet;
     }
 }
