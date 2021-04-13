@@ -630,5 +630,8 @@ public class SeedData
             // this actually saves the faker data.
             custrepos.save(fakeCustomer);
         }
+
+        FakeSeedData fsd = new FakeSeedData(agentrepos, custrepos, ordersrepos, paymentrepos);
+        fsd.initData();
     }
 }
