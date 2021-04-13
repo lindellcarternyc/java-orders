@@ -1,4 +1,4 @@
-package com.lambda.school.javaorders.models;
+package com.lambdaschool.orders.models;
 
 import javax.persistence.*;
 import java.util.HashSet;
@@ -31,7 +31,7 @@ public class Order {
     public Order() {
     }
 
-    public Order(double advanceamount, double ordamount, String orderdescription, Customer customer) {
+    public Order(double ordamount, double advanceamount, Customer customer, String orderdescription) {
         this.advanceamount = advanceamount;
         this.ordamount = ordamount;
         this.orderdescription = orderdescription;

@@ -1,4 +1,4 @@
-package com.lambda.school.javaorders.models;
+package com.lambdaschool.orders.models;
 
 import javax.persistence.*;
 import java.util.HashSet;
@@ -28,10 +28,18 @@ public class Agent {
     public Agent() {
     }
 
-    public Agent(String agentname, double commission, String country, String phone, String workingarea) {
+//    public Agent(String agentname, double commission, String country, String phone, String workingarea) {
+//        this.agentname = agentname;
+//        this.commission = commission;
+//        this.country = country;
+//        this.phone = phone;
+//        this.workingarea = workingarea;
+//    }
+
+    public Agent(String agentname, String country, double commission, String phone, String workingarea) {
         this.agentname = agentname;
-        this.commission = commission;
         this.country = country;
+        this.commission = commission;
         this.phone = phone;
         this.workingarea = workingarea;
     }

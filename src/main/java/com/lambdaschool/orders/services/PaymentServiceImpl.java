@@ -1,7 +1,7 @@
-package com.lambda.school.javaorders.services;
+package com.lambdaschool.orders.services;
 
-import com.lambda.school.javaorders.models.Payment;
-import com.lambda.school.javaorders.repositories.PaymentRepository;
+import com.lambdaschool.orders.models.Payment;
+import com.lambdaschool.orders.repositories.PaymentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

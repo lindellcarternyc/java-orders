@@ -1,4 +1,4 @@
-package com.lambda.school.javaorders.models;
+package com.lambdaschool.orders.models;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -44,17 +44,17 @@ public class Customer {
     public Customer() {
     }
 
-    public Customer(String custcity, String custcountry, String custname, String grade, double openingamt, double outstandingamt, double paymentamt, String phone, double receiveamt, String workingarea, Agent agent) {
+    public Customer(String custname, String workingarea, String custcity, String custcountry, String phone, double openingamt, double outstandingamt, double paymentamt, double receiveamt, String grade, Agent agent) {
+        this.custname = custname;
+        this.workingarea = workingarea;
         this.custcity = custcity;
         this.custcountry = custcountry;
-        this.custname = custname;
-        this.grade = grade;
+        this.phone = phone;
         this.openingamt = openingamt;
         this.outstandingamt = outstandingamt;
         this.paymentamt = paymentamt;
-        this.phone = phone;
         this.receiveamt = receiveamt;
-        this.workingarea = workingarea;
+        this.grade = grade;
         this.agent = agent;
     }
 
